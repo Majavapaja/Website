@@ -1,0 +1,51 @@
+body {
+  background-color: #B8733E;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.logo {
+  position: relative;
+  flex-grow: 1;
+  display: block;
+  cursor: pointer;
+}
+
+.logo:hover img {
+      transform: rotate(45deg);
+  }
+
+.logo img {
+  width: 50px;
+  transition: 750ms;
+  background: #FFF;
+  border-radius: 30px;
+}
+
+.title {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #FFF;
+  font-size: 1.75em;
+  position: absolute;
+  top: 0;
+  left: 60px;
+}
+
+.slogan {
+  color: #FFF;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 5px;
+  left: 75px;
+  white-space: nowrap;
+}
+
+.content {
+  font-size: 3vw;
+  margin: 10px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+}
