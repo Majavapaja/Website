@@ -20,8 +20,8 @@
   <div class="content"></div>
   <script>
     const content = document.querySelector('.content')
-    const pageLoads = parseInt(sessionStorage.getItem('pageLoads')) || 0
-    const loadStamp = sessionStorage.getItem('loadStamp')
+    const pageLoads = parseInt(localStorage.getItem('pageLoads')) || 0
+    const loadStamp = localStorage.getItem('loadStamp')
     const loadDate = loadStamp ? new Date(parseInt(loadStamp)) : null
 
     if (pageLoads === 0) {
@@ -29,30 +29,30 @@
         Website coming soon!
         Refresh the page, it might already be here!
       `
-      sessionStorage.setItem('pageLoads', 1)
+      localStorage.setItem('pageLoads', 1)
     } else if (pageLoads === 1) {
       content.innerText = `
         Any minute now! I am sure of it!
       `
-      sessionStorage.setItem('pageLoads', 2)
+      localStorage.setItem('pageLoads', 2)
     } else if (pageLoads === 2) {
       content.innerText = `
         Hmm, it's not here yet..
         You could try refreshing again.
       `
-      sessionStorage.setItem('pageLoads', 3)
+      localStorage.setItem('pageLoads', 3)
     } else if (pageLoads === 3) {
       content.innerText = `
         Between you and me,
         I am starting to doubt that it will ever be released.
       `
-      sessionStorage.setItem('pageLoads', 4)
+      localStorage.setItem('pageLoads', 4)
     } else if (pageLoads === 4) {
       content.innerText = `
         Honestly what's the point in checking?
         Maybe come back tomorrow?
       `
-      if (!loadDate) sessionStorage.setItem('loadStamp', Date.now())
+      if (!loadDate) localStorage.setItem('loadStamp', Date.now())
     }
 
     if (loadDate && loadDate.setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0)) {
